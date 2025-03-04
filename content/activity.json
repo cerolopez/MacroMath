@@ -1,0 +1,20 @@
+[
+    {
+        "id": "001", 
+        "item": "protein lasagna", 
+        "type": "meal",
+        "timestamp": "2 days ago"
+    }, 
+    {
+        "id": "002", 
+        "item": "protein powder", 
+        "type": "food",
+        "timestamp": "3 days ago"
+    }, 
+    {
+        "id": "003", 
+        "item": "chickpea curry", 
+        "type": "meal",
+        "timestamp": "3 days ago"
+    }
+]

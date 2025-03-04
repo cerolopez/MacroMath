@@ -5,8 +5,7 @@ import TopHeader from "../components/TopHeader.js";
 export default function ListsScreen() {
     return (
         <View>
-            <TopHeader />
-            <Text>Lists</Text>
+            <TopHeader title="Lists"/>
         </View>
     );
 }

@@ -1,38 +1,39 @@
 import * as React from "react";
-import { Text, View, Image, ImageBackground, StyleSheet, Pressable } from "react-native";
+import { Text, ScrollView, View, ImageBackground, StyleSheet, Pressable } from "react-native";
 import TopHeader from "../components/TopHeader.js";
+import ActivityLog from "../components/ActivityLog.js";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
     return (
-        <View>
-            <TopHeader />
+        <ScrollView style={styles.screen}>
+            <TopHeader title="Home"/>
             <ImageBackground source={require("../assets/images/fridge-bg.png")} style={styles.img}>
                 <Text style={styles.h1Text}>MacroMath</Text>
             </ImageBackground>
             <View style={styles.buttonContainer}>
-                <Pressable style={styles.buttonStyle} onPress={() => {}}>
+                <Pressable 
+                style={styles.buttonStyle} 
+                onPress={() => navigation.navigate("Create Food")}>
                     <Text style={styles.buttonText}>Create Food</Text>
                 </Pressable>
-                <Pressable style={styles.buttonStyle} onPress={() => {}}>
+                <Pressable 
+                style={styles.buttonStyle} 
+                onPress={() => navigation.navigate("Create Meal")}>
                     <Text style={styles.buttonText}>Create Meal</Text>
                 </Pressable>
             </View>
             <View style={styles.container}>
                 <Text style={styles.h2Text}>Recent Activity</Text>
-                <View style={styles.feedContainer}>
-                    <Image source={require("../assets/images/fridge-bg.png")} style={styles.icon}></Image>
-                    <View style={styles.activityContainer}>
-                        <Text style={styles.regularText}>Logged <Text style={styles.bold}>protein powder</Text> as a meal</Text>
-                        <Text style={styles.subtitleText}>2 hours ago</Text>
-                    </View>
-                </View>
-                <View style={styles.line} />
+                <ActivityLog />
             </View>
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    screen: {
+        backgroundColor: "white"
+    },
     container: {
         padding: 30, 
         gap: 10
@@ -74,33 +75,5 @@ const styles = StyleSheet.create({
         flexDirection: "row", 
         padding: 30,
         justifyContent: "space-between"
-    }, 
-    icon: {
-        width: 45,
-        height: 45,
-        borderRadius: 50
-    }, 
-    feedContainer: {
-        flexDirection: "row", 
-        gap: 25, 
-        paddingTop: 20
-    }, 
-    regularText: {
-        fontSize: 14
-    },
-    subtitleText: {
-        fontSize: 12
-    }, 
-    activityContainer: {
-        gap: 20
-    }, 
-    line: {
-        height: 1,
-        backgroundColor: "#ccc",
-        marginVertical: 25
-    }, 
-    bold: {
-        fontWeight: 700,
-        color: "#47101E"
     }
 })

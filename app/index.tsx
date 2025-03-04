@@ -5,7 +5,7 @@ export default function Index() {
 
   return (
     <View>
-      <WelcomeScreen />
+      <WelcomeScreen navigation={undefined} />
     </View>
   );
 }

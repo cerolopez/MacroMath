@@ -5,8 +5,7 @@ import TopHeader from "../components/TopHeader.js";
 export default function MealScreen() {
     return (
         <View>
-            <TopHeader />
-            <Text>Meals</Text>
+            <TopHeader title="Meals"/>
         </View>
     );
 }
